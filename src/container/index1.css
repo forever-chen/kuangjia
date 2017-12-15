@@ -1,0 +1,12 @@
+@import './index2.css';
+body{
+    background: red;
+    display: flex;
+}
+.block{
+    margin: 0;
+    width: 100px;
+    height: 200px;
+    background: yellow;
+    border: 3px dashed darkcyan;
+}

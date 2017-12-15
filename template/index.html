@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <h1 name="">titldfadsfasdfe</h1>
+   <div id="root"></div>   
+    <% for(var key in htmlWebpackPlugin.files.chunks){ %>
+        <% if(key!=='a'){ %>
+            <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"></script>
+        <% } %>
+    <% } %>
+    <!-- 把下面直接引入的js文件去除 -->
+</body>
+</html>
+
+<script type="text/javascript">
+    <%= compilation.assets[htmlWebpackPlugin.files.chunks.a.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+</script>
+
+<!-- <script src="<%= htmlWebpackPlugin.files.chunks.a.entry %>"></script> -->
+<!-- 我是注释 -->  
